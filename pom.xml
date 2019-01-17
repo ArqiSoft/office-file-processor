@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <swagger.version>2.4.0</swagger.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <nexus.release.url>https://nexus.your-company.com/repository/maven-releases/</nexus.release.url>
+        <nexus.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</nexus.release.url>
 
     </properties>
 
