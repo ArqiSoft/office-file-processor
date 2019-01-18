@@ -3,7 +3,7 @@ version: '3'
 services:
     office-file-processor:
         container_name: office-file-processor
-        image: docker.your-company.com/sds/office-file-processor:latest
+        image: leanda/office-file-processor:latest
         environment:
         - TZ=EST
         - OSDR_LOG_FOLDER=/logs
