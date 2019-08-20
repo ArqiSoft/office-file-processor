@@ -1,5 +1,6 @@
 package sds.officeprocessor.config;
 
+import com.mongodb.ConnectionString;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -33,14 +34,22 @@ public class AppConfiguration  {
 
     @Bean
     BlobStorage getBlobStorage(
-            @Value("${spring.data.mongodb.uri}") String mongoConnectionString, 
-            @Value("${spring.data.mongodb.grid-fs-database}") String dbName) {
+            @Value("${spring.data.mongodb.uri}") String mongoConnectionString) {
         
-        LOGGER.info("Connecting to MongoDB using url {}", mongoConnectionString);
-        LOGGER.info("MongoDB database name: {}", dbName);
-        
+        ConnectionString cs = new ConnectionString(mongoConnectionString);
+        if(cs.getPassword() != null)
+        {
+            String secureConnectionString = cs.toString().replaceFirst(":" + String.valueOf(cs.getPassword()) + "@", ":" + StringUtils.repeat("*", cs.getPassword().length) + "@")
+                    .replaceFirst("//" + cs.getUsername() + ":", "//" + StringUtils.repeat("*", cs.getUsername().length()) + ":");
+            LOGGER.info("Connecting to MongoDB using url {}", secureConnectionString); 
+        }
+        else{
+            LOGGER.info("Connecting to MongoDB using url {}", mongoConnectionString);
+        }
+       
+        LOGGER.info("MongoDB database name: {}", cs.getDatabase());
         return new GridFSBlobStorage(new MongoClient(
-                new MongoClientURI(mongoConnectionString)).getDatabase(dbName));    
+                new MongoClientURI(mongoConnectionString)).getDatabase(cs.getDatabase()));    
     }
     
     @Bean
