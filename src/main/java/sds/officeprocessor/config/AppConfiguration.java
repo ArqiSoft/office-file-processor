@@ -22,6 +22,7 @@ import com.npspot.jtransitlight.transport.JTransitLightTransportException;
 import sds.officeprocessor.domain.commands.ConvertToPdf;
 import com.sds.storage.BlobStorage;
 import com.sds.storage.gridfs.GridFSBlobStorage;
+import org.apache.commons.lang.StringUtils;
 import sds.officeprocessor.domain.commands.ExtractMeta;
 
 
