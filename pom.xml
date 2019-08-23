@@ -204,11 +204,6 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
-        <repository>
-            <id>loci</id>
-            <name>Loci Maven Repository</name>
-            <url>http://dev.loci.wisc.edu/maven2/releases/</url>
-        </repository>
     </repositories>
 
     <pluginRepositories>
