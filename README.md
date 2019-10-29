@@ -1,5 +1,7 @@
 # Office File Processor
 
+[![Build Status](https://travis-ci.org/ArqiSoft/office-file-processor-service.svg?branch=master)](https://travis-ci.org/ArqiSoft/office-file-processor-service)
+
 ## System Requirements
 
 Java 1.8, Maven 3.x
