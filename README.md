@@ -1,6 +1,6 @@
 # Office File Processor
 
-[![Build Status](https://travis-ci.org/ArqiSoft/office-file-processor-service.svg?branch=master)](https://travis-ci.org/ArqiSoft/office-file-processor-service)
+[![Build Status](https://travis-ci.com/ArqiSoft/office-file-processor-service.svg?branch=master)](https://travis-ci.com/ArqiSoft/office-file-processor-service)
 
 ## System Requirements
 
